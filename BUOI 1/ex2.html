@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Điểm</title>
+    <style>
+        
+
+        .container {
+            justify-content: center;
+            /* align-items: center; */
+            /* display: flex; */
+            /* flex-direction: column; */
+            background-color: #cecdcd;
+            padding: 20px;
+            border: solid 3px red;
+            border-radius: 8px;
+            /* text-align: center; */
+            width: 500px;
+
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        .semester1, .semester2, .year, .summary {
+            display: flex;
+            margin-top: 10px;
+            font-size: 16px;
+        
+        }
+
+        input {
+            width: 300px;
+            padding: 5px;
+            margin-top: 5px;
+
+        }
+
+        select {
+            width: 30px;
+            margin-left: 40px;
+
+        }
+
+        #result {
+            color: red;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }   
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BANG DIEM CUA EM</h1>
+        <form id="scoreForm">
+            <label for="semester1">Semester 1:</label>
+            <input type="number" id="semester1" min="0" max="10" required>
+            <br>
+
+            <label for="semester2">Semester 2:</label>
+            <input type="number" id="semester2" min="0" max="10" required>
+            <br>
+
+            <label for="year">Year:</label>
+            <select id="year">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+            </select>
+            <br>
+
+            <label for="summary">Summarise:</label>
+            <input type="text" id="summary" disabled>
+            <br>
+
+            <p id="result"></p>
+
+            <button type="button" onclick="calculateScore()">OK</button>
+            <button type="reset">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        function calculateScore() {
+            var semester1 = parseFloat(document.getElementById("semester1").value);
+            var semester2 = parseFloat(document.getElementById("semester2").value);
+            var year = parseFloat(document.getElementById("year").value);
+            var summary = (semester1 + semester2 * year ) / (year + 1) ;
+    
+    
+            document.getElementById("summary").value = summary.toFixed(15);
+
+            var result = "";
+            if (summary > 10.0 ) {
+                result = "Khong co ket qua"
+            } else if (summary >= 8.0) {
+                result = "Hoc sinh gioi";
+            } else if (summary >= 6.5) {
+                result = "Hoc sinh kha";
+            } else if (summary >= 5.0) {
+                result = "Hoc sinh trung binh";
+            } else {
+                result = "Hoc sinh yeu";
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+
+    </script>
+</body>
+</html>
