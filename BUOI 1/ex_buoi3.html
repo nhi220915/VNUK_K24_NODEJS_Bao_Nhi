@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            padding: 20px;
+            width: 60%;
+            background-color: #9fc5c5;
+            font-weight: bold;
+            color: black;
+        }
+
+        
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            border: none;
+            background-color: rgb(232, 102, 102);
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d7d7d7;
+        }
+
+        table {
+            width: 50%;
+            margin-top: 20px;
+            background-color: #ffffff;
+            color: black;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #dbaae3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="productForm">
+            Fullname_Customer
+            <input type="text" id="fullname" name="fullname" required>
+            Id_Pro
+            <input type="text" id="id_pro" name="id_pro" required>
+            Name_Pro
+            <input type="text" id="name_pro" name="name_pro" required>
+            Quantity_Pro
+            <input type="number" id="quantity_pro" name="quantity_pro" required>
+            Price_Pro
+            <input type="number" id="price_pro" name="price_pro" required>
+            
+            <div class="buttons">
+                <button type="button" onclick="save()">Save</button>
+                <button type="button" onclick="show()">Show</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Auto_Increment</th>
+                    <th>Fullname_Customer</th>
+                    <th>Id_Pro</th>
+                    <th>Name_Pro</th>
+                    <th>Quantity_Pro</th>
+                    <th>Price_Pro</th>
+                    <th>Discount</th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tbl"></tbody>
+        </table>
+    </div>
+
+    <script>  
+        let data = [];
+        let autoIncrement = 1;
+
+        function save() {
+            const fullname = document.getElementById('fullname').value;
+            const id_pro = document.getElementById('id_pro').value;
+            const name_pro = document.getElementById('name_pro').value;
+            const quantity_pro = parseFloat(document.getElementById('quantity_pro').value);
+            const price_pro = parseFloat(document.getElementById('price_pro').value);
+
+            const discount = price_pro * 0.99;  
+            const amount = quantity_pro * price_pro;
+            const total = amount - discount;
+
+            data.push({
+                id: autoIncrement++,
+                fullname,
+                id_pro,
+                name_pro,
+                quantity_pro,
+                price_pro,
+                discount: discount.toFixed(2),
+                amount: amount.toFixed(2),
+                total: total.toFixed(2),
+            });
+        }
+
+        function show() {
+            const tableBody = document.getElementById('tbl');
+            tableBody.innerHTML = '';
+
+            data.forEach(item => {
+                const row = '<tr>' +
+                    '<td>' + item.id + '</td>' +
+                    '<td>' + item.fullname + '</td>' +
+                    '<td>' + item.id_pro + '</td>' +
+                    '<td>' + item.name_pro + '</td>' +
+                    '<td>' + item.quantity_pro + '</td>' +
+                    '<td>' + item.price_pro + '</td>' +
+                    '<td>' + item.discount + '</td>' +
+                    '<td>' + item.amount + '</td>' +
+                    '<td>' + item.total + '</td>' +
+                    '</tr>';
+                tbl.insertAdjacentHTML('beforeend', row);
+            });
+        }
+    </script>
+</body>
+</html>
