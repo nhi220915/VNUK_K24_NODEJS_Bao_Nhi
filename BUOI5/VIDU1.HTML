@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        //KIểm tra trình duyệt có hỗ trợ local storage không
+        if (typeof(Storage) !== "undefined") {
+            // Luu tru
+            localStorage.setItem("website", "webvn.com");
+            // Lay du lieu
+            document.getElementById("result").innerHTML =
+            localStorage.getItem("website");
+
+        }else {
+            document.getElementById("result").innerHTML = "Rat tiec, trinh duyt cua ban khong ho tro local storage...";
+        }
+    </script>
+</body>
+</html>

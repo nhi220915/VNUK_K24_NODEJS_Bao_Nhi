@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thời Trang Nữ</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #b51e36;
+        font-weight: bold;
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+      }
+
+      .search input {
+        padding: 5px;
+        margin-right: 5px;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      h2 {
+        color: #b51e36;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .product-list {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .product {
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 200px;
+      }
+
+      .product img {
+        width: 100%;
+        height: auto;
+      }
+
+      .product p {
+        margin: 10px 0;
+      }
+
+      .price-old {
+        text-decoration: line-through;
+        color: #888;
+      }
+
+      .price-new {
+        color: #b51e36;
+        font-weight: bold;
+      }
+
+      .buy-btn {
+        background-color: #b51e36;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Shop DEBUG" />
+        <h1>Shop DEBUG</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Thời Trang Nam</a></li>
+          <li><a href="#">Thời Trang Nữ</a></li>
+          <li><a href="#">Tin Tức</a></li>
+        </ul>
+      </nav>
+      <div class="search">
+        <input type="text" placeholder="Tìm Kiếm..." />
+        <button>Tìm Kiếm</button>
+      </div>
+    </header>
+
+    <main>
+      <h2>Thời Trang Nữ</h2>
+      <div class="product-list" id="product-list">
+        <!-- Products will be inserted here by JavaScript -->
+      </div>
+    </main>
+
+    <script>
+      var products = [
+        {
+          name: "Quần Jean Nữ",
+          code: "KO0002",
+          oldPrice: "370.000 vnd",
+          newPrice: "269.000 vnd",
+          imageUrl:
+            "https://th.bing.com/th/id/OIF.xRyXHnpRZYNJ9NpQGZ3c7w?w=203&h=203&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+        },
+        {
+          name: "Áo Khoác Nữ",
+          code: "VN0002",
+          oldPrice: "369.000 vnd",
+          newPrice: "249.000 vnd",
+          imageUrl:
+            "https://th.bing.com/th/id/OIP.S8lwqoap08otwOgrWQYr2QHaHa?w=181&h=182&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+        },
+        {
+          name: "Áo Phông Nữ",
+          code: "US0002",
+          oldPrice: "390.000 vnd",
+          newPrice: "159.000 vnd",
+          imageUrl:
+            "https://th.bing.com/th/id/OIP.5-oWBzha2uiKPUMqeeiWsAHaFj?w=248&h=186&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+        },
+      ];
+
+      function show() {
+        const productList = document.getElementById("product-list");
+        products.forEach((product) => {
+          const productHTML = `
+                    <div class="product">
+                        <img src="${product.imageUrl}" alt="${product.name}">
+                        <p>${product.name} - ${product.code}</p>
+                        <p><span class="price-old">${product.oldPrice}</span> <span class="price-new">${product.newPrice}</span></p>
+                        <button class="buy-btn">Đặt Mua</button>
+                    </div>
+                `;
+          productList.innerHTML += productHTML;
+        });
+      }
+
+      // Call the show function when the page loads
+      document.addEventListener("DOMContentLoaded", show);
+    </script>
+  </body>
+</html>
