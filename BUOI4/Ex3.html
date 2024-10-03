@@ -131,9 +131,7 @@
 
     <main>
       <h2>Thời Trang Nữ</h2>
-      <div class="product-list" id="product-list">
-      
-      </div>
+      <div class="product-list" id="product-list"></div>
     </main>
 
     <script>
@@ -163,7 +161,7 @@
             "https://th.bing.com/th/id/OIP.5-oWBzha2uiKPUMqeeiWsAHaFj?w=248&h=186&c=7&r=0&o=5&dpr=1.5&pid=1.7",
         },
       ];
-        // show products
+      // show products
       function show() {
         const productList = document.getElementById("product-list");
         products.forEach((product) => {
@@ -178,8 +176,6 @@
           productList.innerHTML += productHTML;
         });
       }
-
-      
       document.addEventListener("DOMContentLoaded", show);
     </script>
   </body>
