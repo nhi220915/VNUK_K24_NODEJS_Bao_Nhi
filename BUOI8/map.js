@@ -1,0 +1,10 @@
+const map1 = new Map([['a', 111], ['b', 222]])
+console.log(map1) 
+map1.get('a')  
+
+const map2 = new Map([['c', 3]])
+const map3 = new Map(map2)
+map3.get('c')
+map3.has('c') 
+map3.set('d', 555)
+map3.get('d') 
