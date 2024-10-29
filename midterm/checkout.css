@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.checkout-container {
+    width: 80%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: #b86b5a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .step {
+    background-color: #f2f2f2;
+    color: #b86b5a;
+    border-radius: 50%;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.header h2 {
+    font-size: 1.2rem;
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.guest-info,
+.billing-details {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.guest-info h3,
+.billing-details h3 {
+    color: #b86b5a;
+    margin-bottom: 20px;
+}
+
+.form,
+.billing-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-group input,
+form input,
+form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #b86b5a;
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #944b43;
+}
+
+.billing-info p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.billing-info p span {
+    font-weight: bold;
+}
+
+.highlight {
+    color: #b86b5a;
+    font-weight: bold;
+}

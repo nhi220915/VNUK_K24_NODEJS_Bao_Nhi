@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    .booking-container {
+      max-width: 500px;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      margin: 20px;
+      color: #333;
+    }
+    .booking-container h1 {
+      font-size: 2em;
+      color: #4facfe;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .booking-details, .cost-details, .additional-services {
+      margin-bottom: 20px;
+      padding: 10px;
+      border-left: 4px solid #4facfe;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    .booking-details p, .cost-details p, .additional-services p {
+      font-size: 1em;
+      margin: 8px 0;
+      color: #555;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #333;
+    }
+    .additional-services ul {
+      list-style: none;
+      padding: 0;
+      color: #4facfe;
+    }
+    .additional-services li {
+      font-size: 1em;
+      margin-left: 10px;
+    }
+    .total-cost {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00b894;
+      text-align: center;
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .back-button {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      background-color: #4facfe;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #007bb5;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid #ddd;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="booking-container">
+    <h1>Booking Confirmation</h1>
+    <div class="booking-details">
+      <p><span class="highlight">Arrival:</span> 15 Jan 2025, 15:00</p>
+      <p><span class="highlight">Departure:</span> 18 Jan 2025, 12:00</p>
+      <p><span class="highlight">Length of Stay:</span> 3 nights</p>
+      <p><span class="highlight">Room:</span> Deluxe Double Room with Sea View</p>
+      <p><span class="highlight">Guests:</span> 2 adults, 1 child</p>
+    </div>
+    <hr>
+    <div class="additional-services">
+      <p class="highlight">Additional Services:</p>
+      <ul>
+        <li>Car & ATV Rental</li>
+        <li>Yacht Hiring</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="cost-details">
+      <p><span class="highlight">Best Available Rate:</span> $120.00 per night</p>
+      <p><span class="highlight">Additional Service Charges:</span> $50.00</p>
+      <p><span class="highlight">Subtotal:</span> $370.00</p>
+    </div>
+    <hr>
+    <div class="total-cost">
+      Total Cost: $420.00
+    </div>
+    <button class="back-button" onclick="window.location.href='booking.html'">Return</button>
+  </div>
+</body>
+</html>
