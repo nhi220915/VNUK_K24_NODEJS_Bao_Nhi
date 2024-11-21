@@ -10,6 +10,12 @@ module.export = {
         const categories = await categoryModel.find();
         return res.status(200).json(updatedCategory);
     },
+    updatedCategory: async (req, res) => {
+        const id = req.params.id;
+        const body = req.body;
+        const updatedCategory = await categoryModel.findByIdAndUpdate(id, body, {new: true});
+        return res.status(200).json(updatedCategory);
+    },
     deleteCategory: async(req, res) => {
         const id = req.params.id;
         const deletedCategory = await categoryModel.findByIdAndDelete(id);
