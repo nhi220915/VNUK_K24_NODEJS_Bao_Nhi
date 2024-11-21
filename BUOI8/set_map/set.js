@@ -1,4 +1,5 @@
-let fruits = new Set();
+const fruits = new Set();
+
 fruits.add('apple');
 fruits.add('banana');
 fruits.add('apple');
