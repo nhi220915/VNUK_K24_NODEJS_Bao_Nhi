@@ -3,18 +3,17 @@ const router = express.Router();
 
 const {
     createFood,
-    getFoods,
+    getFoodById,
     updateFood,
     deleteFood
-} = require("../controllers/food.controller"); // Import food controller
+} = require("../controllers/food.controller");
 
-// Routes cho food
 router.route("/")
-    .post(createFood) // Tạo món ăn mới
-    .get(getFoods);   // Lấy danh sách món ăn
+    .post(createFood)
+    .get(getFoodById);
 
 router.route("/:id")
-    .patch(updateFood) // Cập nhật món ăn theo id
-    .delete(deleteFood); // Xóa món ăn theo id
+    .patch(updateFood)
+    .delete(deleteFood);
 
-module.exports = router; // Xuất router
+module.exports = router;

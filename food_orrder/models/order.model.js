@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+
 const orderSchema = mongoose.Schema({
     customer: {
         type: String,
@@ -14,7 +15,7 @@ const orderSchema = mongoose.Schema({
     },
     total_money: {
         type: Number,
-        requried: true
+        required: true
     },
     payment_method: {
         type: String,
@@ -34,5 +35,6 @@ const orderSchema = mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref: "cart"
     }
-})
+});
+
 module.exports = mongoose.model("order", orderSchema);

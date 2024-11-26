@@ -4,7 +4,7 @@ const categoryController = {
     getData: async (req, res) => {
         try {
             // Gọi API sử dụng fetch
-            const response = await fetch('http://localhost:3000/api/categories');
+            const response = await fetch('localhost:3000/api/categories');
             const data = await response.json();
             
             // Truyền dữ liệu vào view EJS
